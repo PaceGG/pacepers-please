@@ -8,8 +8,8 @@ import {
   LinearProgress,
   Typography,
 } from "@mui/material";
-import Pasport from "../../classes/Pasport";
-import PasportCard from "../../components/PasportCard";
+import Pasport from "../../classes/Passport";
+import PasportCard from "../../components/PassportCard";
 import { useParams, useRouter } from "next/navigation";
 import FlexBox from "@/app/styled/FlexBox";
 import RulesList from "@/app/components/Rules";

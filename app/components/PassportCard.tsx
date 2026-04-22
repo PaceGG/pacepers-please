@@ -8,7 +8,7 @@ import {
   TypographyProps,
 } from "@mui/material";
 import styled from "@emotion/styled";
-import Pasport from "../classes/Pasport";
+import Pasport from "../classes/Passport";
 import FlexBox from "../styled/FlexBox";
 
 export interface PasportProps {
