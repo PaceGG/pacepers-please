@@ -61,6 +61,7 @@ export default function DiplomaticDocument({ diplomatic }: Props) {
           fontFamily: "inherit",
           overflow: "hidden",
           color: colors.text,
+          userSelect: "none",
         }}
       >
         {/* LEFT VERTICAL TEXT */}

@@ -18,7 +18,7 @@ export default function Dev() {
   const [idCard] = useState(() => new IDCard(passport));
 
   return (
-    <Box>
+    <Box sx={{ display: "flex", gap: 1, alignItems: "start" }}>
       <PassportCard passport={passport} />
       <IDCardComponent idCard={idCard} />
     </Box>

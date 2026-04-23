@@ -14,7 +14,7 @@ import { theme } from "@/app/theme";
 import ImporPassport from "./ImporPassport";
 import ObristanPassport from "./ObristanPassport";
 import RepubliaPassport from "./RepubliaPassport";
-import UnitedFederationPassport from "./UnitedFederationPassport"
+import UnitedFederationPassport from "./UnitedFederationPassport";
 
 const passportTheme = createTheme({
   ...theme,

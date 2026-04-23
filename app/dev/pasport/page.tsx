@@ -35,7 +35,14 @@ export default function Dev() {
         minHeight: 500,
       }}
     >
-      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1,
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
         {countries.map((country) => (
           <Button key={country} onClick={() => setCountry(country)}>
             {country}
