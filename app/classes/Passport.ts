@@ -1,9 +1,23 @@
-import { COUNTRIES, NAMES, rand, random, randTrue, YEAR } from "./generator";
+import {
+  CITIES,
+  COUNTRIES,
+  NAMES,
+  rand,
+  random,
+  randomPassportId,
+  randTrue,
+  YEAR,
+} from "./generator";
+
+type Sex = "М" | "Ж";
 
 export default class Passport {
+  id: string;
   name: string;
   country: string;
+  city: string;
   birth: Date;
+  sex: Sex;
   validUntil: Date;
 
   isFake: boolean;
@@ -11,12 +25,21 @@ export default class Passport {
   isExpired: boolean;
 
   constructor(day: number = 0) {
+    // id
+    this.id = randomPassportId();
+
     // Имя
     this.name = random(NAMES);
 
     // Страна
     this.country = random(COUNTRIES);
     if (day === 1 && randTrue()) this.country = "Estovia";
+
+    // Город
+    this.city = random(CITIES);
+
+    // Пол
+    this.sex = randTrue() ? "М" : "Ж";
 
     // Возраст
     const age = rand(14, 90);
@@ -48,5 +71,9 @@ export default class Passport {
       if (this.country === "Estovia") return true;
     }
     return false;
+  }
+
+  clone() {
+    return Object.assign(new Passport(), this);
   }
 }

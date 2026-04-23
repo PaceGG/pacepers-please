@@ -1,0 +1,38 @@
+{
+  "paper": "#eee4dd",
+  "antegria": {
+    "passport": "#395824",
+    "primaryText": "#625252",
+    "secondaryText": "#ac9f9b"
+  },
+  "arstotzka": {
+    "passport": "#445243",
+    "primaryText": "#625252",
+    "secondaryText": "#ac9f9b"
+  },
+  "impor": {
+    "passport": "#661f09",
+    "primaryText": "#574848",
+    "secondaryText": "#a29490"
+  },
+  "kolechia": {
+    "passport": "#5d2749",
+    "primaryText": "#625252",
+    "secondaryText": "#ac9f9b"
+  },
+  "obristan": {
+    "passport": "#900513",
+    "primaryText": "#625252",
+    "secondaryText": "#ab9f9b"
+  },
+  "republia": {
+    "passport": "#4b2a18",
+    "primaryText": "#564848",
+    "secondaryText": "#a1948f"
+  },
+  "united federation": {
+    "passport": "#2c1b60",
+    "primaryText": "#625252",
+    "secondaryText": "#ac9f9b"
+  }
+}
