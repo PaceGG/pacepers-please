@@ -11,23 +11,25 @@ export const COUNTRIES = [
   "United Federation",
 ];
 
-export const CITIES = ["city 1", "city 2", "city 3"];
-
-export const NAMES = [
-  "Ivan Petrov",
-  "Alexei Morozov",
-  "John Carter",
-  "Luis Herrera",
-  "Marek Novak",
-  "Daniel Silva",
-  "Noah Brown",
-  "Artem Volkov",
-  "Victor Hale",
-  "Samuel Reed",
+export const ARSTOTZKA_DISTRICTS = [
+  "Altan",
+  "Vescillo",
+  "Burnton",
+  "Octovalis",
+  "Gennistora",
+  "Lendiforma",
+  "Wozenfield",
+  "Fardesto",
 ];
+
+export const CITIES = ["city 1", "city 2", "city 3"];
 
 export function random<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
+}
+
+export function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
 }
 
 export function rand(min: number, max: number): number {
@@ -47,19 +49,4 @@ export function randomNormal(mean: number, stdDev: number): number {
 
 export function randTrue(probability: number = 0.5): boolean {
   return Math.random() < probability;
-}
-
-export function randomPassportId(): string {
-  const chars: string = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-  const generatePart = (length: number): string => {
-    let result: string = "";
-    for (let i = 0; i < length; i++) {
-      const randomIndex: number = Math.floor(Math.random() * chars.length);
-      result += chars[randomIndex];
-    }
-    return result;
-  };
-
-  return `${generatePart(5)}-${generatePart(5)}`;
 }

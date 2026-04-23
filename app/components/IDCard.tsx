@@ -7,6 +7,7 @@ import { theme } from "../theme";
 import Photo from "./Photo";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import IDCard from "../classes/IDCard";
 
 const colors = {
   paper: "#dcc2fb",
@@ -37,7 +38,11 @@ const Chip = styled(Typography)({
   textAlign: "center",
 });
 
-export default function IDCard() {
+interface IDCardProps {
+  idCard: IDCard;
+}
+
+export default function IDCardCard({ idCard }: IDCardProps) {
   return (
     <ThemeProvider theme={idCardTheme}>
       <Paper
@@ -47,6 +52,7 @@ export default function IDCard() {
           width: 400,
           p: 1,
           borderRadius: 2,
+          userSelect: "none",
           overflow: "hidden",
         }}
       >
@@ -64,7 +70,7 @@ export default function IDCard() {
           <Typography
             sx={{ bgcolor: colors.secondary, px: 1, color: colors.paper }}
           >
-            Район Район
+            Район {idCard.district}
           </Typography>
           <Box
             sx={{
@@ -117,21 +123,23 @@ export default function IDCard() {
                 />
               </Box>
               <Box sx={{ color: colors.secondary, px: 1, zIndex: 1 }}>
-                <Typography>Surname</Typography>
-                <Typography>Name</Typography>
+                <Typography>{idCard.name.split(" ")[0]}</Typography>
+                <Typography>{idCard.name.split(" ")[1]}</Typography>
               </Box>
               <Box>
                 <Blank>
                   <Chip>РОД</Chip>
-                  <Typography sx={{ zIndex: 1 }}>30.12.2004</Typography>
+                  <Typography sx={{ zIndex: 1 }}>
+                    {idCard.birth.toLocaleDateString()}
+                  </Typography>
                 </Blank>
                 <Blank>
-                  <Chip>РОД</Chip>
-                  <Typography sx={{ zIndex: 1 }}>30.12.2004</Typography>
+                  <Chip>РОС</Chip>
+                  <Typography sx={{ zIndex: 1 }}>{idCard.height}см</Typography>
                 </Blank>
                 <Blank>
-                  <Chip>РОД</Chip>
-                  <Typography sx={{ zIndex: 1 }}>30.12.2004</Typography>
+                  <Chip>ВЕС</Chip>
+                  <Typography sx={{ zIndex: 1 }}>{idCard.weight}кг</Typography>
                 </Blank>
               </Box>
             </Box>

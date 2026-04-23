@@ -1,15 +1,7 @@
-import {
-  CITIES,
-  COUNTRIES,
-  NAMES,
-  rand,
-  random,
-  randomPassportId,
-  randTrue,
-  YEAR,
-} from "./generator";
+import { CITIES, COUNTRIES, rand, random, randTrue, YEAR } from "./generator";
+import NAMES from "@/data/names.json";
 
-type Sex = "М" | "Ж";
+export type Sex = "М" | "Ж";
 
 export default class Passport {
   id: string;
@@ -19,17 +11,19 @@ export default class Passport {
   birth: Date;
   sex: Sex;
   validUntil: Date;
+  age: number;
 
-  isFake: boolean;
-  hasPhoto: boolean;
   isExpired: boolean;
 
   constructor(day: number = 0) {
     // id
     this.id = randomPassportId();
 
+    // Пол
+    this.sex = randTrue() ? "М" : "Ж";
+
     // Имя
-    this.name = random(NAMES);
+    this.name = randomName(this.sex);
 
     // Страна
     this.country = random(COUNTRIES);
@@ -38,11 +32,9 @@ export default class Passport {
     // Город
     this.city = random(CITIES);
 
-    // Пол
-    this.sex = randTrue() ? "М" : "Ж";
-
     // Возраст
     const age = rand(14, 90);
+    this.age = age;
 
     const now = Date.now();
 
@@ -57,10 +49,6 @@ export default class Passport {
     this.validUntil = new Date(
       now + (this.isExpired ? -rand(1, 5) * YEAR : validityYears * YEAR),
     );
-
-    this.isFake = day > 10 ? Math.random() < 0.1 + day * 0.01 : false;
-
-    this.hasPhoto = Math.random() > 0.1;
   }
 
   isValid(day: number): boolean {
@@ -76,4 +64,23 @@ export default class Passport {
   clone() {
     return Object.assign(new Passport(), this);
   }
+}
+
+function randomPassportId(): string {
+  const chars: string = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+  const generatePart = (length: number): string => {
+    let result: string = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex: number = Math.floor(Math.random() * chars.length);
+      result += chars[randomIndex];
+    }
+    return result;
+  };
+
+  return `${generatePart(5)}-${generatePart(5)}`;
+}
+
+function randomName(sex: Sex): string {
+  return sex === "М" ? random(NAMES.males) : random(NAMES.females);
 }
