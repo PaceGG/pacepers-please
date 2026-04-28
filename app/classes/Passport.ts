@@ -51,6 +51,10 @@ export default class Passport {
     );
   }
 
+  getReversedName() {
+    return this.name.split(" ").toReversed().join(" ");
+  }
+
   isValid(day: number): boolean {
     if (day === 0) {
       return true;

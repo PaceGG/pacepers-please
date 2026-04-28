@@ -48,7 +48,7 @@ export default function KolechiaPassport({ passport }: KolechiaPassportProps) {
           KOLECHIA
         </Typography>
       </Box>
-      <Typography>{passport.name}</Typography>
+      <Typography>{passport.getReversedName()}</Typography>
       <Box sx={{ display: "flex", gap: 1 }}>
         <Box>
           <Photo height={"100%"} />

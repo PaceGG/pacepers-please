@@ -53,7 +53,7 @@ export default function ObristanPassport({ passport }: ObristanPassportProps) {
         </Typography>
         <Marker />
       </Box>
-      <Typography>{passport.name}</Typography>
+      <Typography>{passport.getReversedName()}</Typography>
       <Box
         sx={{
           display: "flex",

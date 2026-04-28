@@ -72,7 +72,7 @@ export default function AntegriaPasport({ passport }: AntegriaPasportProps) {
         </Box>
       </Box>
       <Blank>
-        <Typography>{passport.name}</Typography>
+        <Typography>{passport.getReversedName()}</Typography>
       </Blank>
       <Box>
         <Typography

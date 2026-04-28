@@ -123,8 +123,8 @@ export default function IDCardCard({ idCard }: IDCardProps) {
                 />
               </Box>
               <Box sx={{ color: colors.secondary, px: 1, zIndex: 1 }}>
-                <Typography>{idCard.name.split(" ")[0]}</Typography>
                 <Typography>{idCard.name.split(" ")[1]}</Typography>
+                <Typography>{idCard.name.split(" ")[0]}</Typography>
               </Box>
               <Box>
                 <Blank>

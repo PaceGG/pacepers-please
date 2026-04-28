@@ -28,7 +28,7 @@ export default function ArstotzkaPasport({ passport }: ArstotzkaPasportProps) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Box>
-        <Typography>{passport.name}</Typography>
+        <Typography>{passport.getReversedName()}</Typography>
       </Box>
       <Box sx={{ display: "flex", gap: 0.5 }}>
         <Box>

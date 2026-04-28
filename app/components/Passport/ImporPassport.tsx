@@ -22,7 +22,7 @@ export default function ImporPassport({ passport }: ImporPassportProps) {
   return (
     <Box>
       <Box>
-        <Typography>{passport.name}</Typography>
+        <Typography>{passport.getReversedName()}</Typography>
       </Box>
       <Box
         sx={{

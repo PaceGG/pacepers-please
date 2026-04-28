@@ -55,7 +55,7 @@ export default function UnitedFederationPassport({
         />
       </Box>
       <Box>
-        <Typography>{passport.name}</Typography>
+        <Typography>{passport.getReversedName()}</Typography>
       </Box>
       <Box sx={{ display: "flex", gap: 0.5 }}>
         <Box>
