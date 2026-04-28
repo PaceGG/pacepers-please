@@ -16,6 +16,9 @@ function DevOnlyComponent() {
       <Button component={Link} href="/dev/diplomatic" color="primary">
         Диполматический статус
       </Button>
+      <Button component={Link} href="/dev/ticket" color="primary">
+        Пропуск
+      </Button>
     </Box>
   );
 }
