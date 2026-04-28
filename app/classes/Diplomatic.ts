@@ -1,7 +1,7 @@
 import { COUNTRIES, rand, randTrue, shuffle } from "./generator";
 import Passport from "./Passport";
 
-type Seal =
+export type Seal =
   | "valid1"
   | "valid2"
   | "invalid1"

@@ -54,7 +54,7 @@ export default function DiplomaticDocument({ diplomatic }: Props) {
       <Paper
         sx={{
           width: "380px",
-          height: "500px",
+          minHeight: "500px",
           position: "relative",
           backgroundColor: colors.paper,
           borderRadius: 0,
