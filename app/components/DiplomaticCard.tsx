@@ -5,6 +5,7 @@ import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import { theme } from "../theme";
 import Brail from "../styled/Brail";
 import BarCode from "../styled/BarCode";
+import SealImage from "./Seal";
 import "@fontsource/ibm-plex-mono";
 import "@fontsource/iosevka-etoile/200.css";
 import Diplomatic from "../classes/Diplomatic";
@@ -64,6 +65,17 @@ export default function DiplomaticDocument({ diplomatic }: Props) {
           userSelect: "none",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 0,
+            right: 15,
+            top: 50,
+          }}
+        >
+          <SealImage country={diplomatic.country} variant={diplomatic.seal} />
+        </Box>
+
         {/* LEFT VERTICAL TEXT */}
         <Box
           sx={{
@@ -159,6 +171,7 @@ export default function DiplomaticDocument({ diplomatic }: Props) {
             sx={{
               display: "flex",
               justifyContent: "space-between",
+              zIndex: 1,
             }}
           >
             <Typography
