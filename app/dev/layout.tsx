@@ -6,7 +6,14 @@ import React from "react";
 
 function DevOnlyComponent() {
   return (
-    <Box sx={{ display: "flex", gap: 1, justifyContent: "center" }}>
+    <Box
+      sx={{
+        display: "flex",
+        gap: 1,
+        justifyContent: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <Button component={Link} href="/dev/pasport" color="primary">
         Паспорт
       </Button>
@@ -18,6 +25,9 @@ function DevOnlyComponent() {
       </Button>
       <Button component={Link} href="/dev/ticket" color="primary">
         Пропуск
+      </Button>
+      <Button component={Link} href="/dev/visa" color="primary">
+        Виза
       </Button>
     </Box>
   );

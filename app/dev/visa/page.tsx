@@ -1,17 +1,14 @@
 "use client";
 
-import Diplomatic from "@/app/classes/Diplomatic";
 import Passport from "@/app/classes/Passport";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
+import Visa from "@/app/classes/Visa";
 
-const DiplomaticCard = dynamic(
-  () => import("@/app/components/DiplomaticCard"),
-  {
-    ssr: false,
-  },
-);
+const VisaCard = dynamic(() => import("@/app/components/VisaCard"), {
+  ssr: false,
+});
 
 const PassportCard = dynamic(
   () => import("@/app/components/Passport/PassportCard"),
@@ -22,20 +19,20 @@ const PassportCard = dynamic(
 
 export default function Dev() {
   const [passport] = useState(() => new Passport());
-  const [diplomatic] = useState(() => new Diplomatic(passport));
-  console.log(diplomatic);
+  const [visa] = useState(() => new Visa(passport));
 
   return (
     <Box
       sx={{
         display: "flex",
+        flexWrap: "wrap",
         gap: 1,
         alignItems: "flex-start",
-        flexWrap: "wrap",
+        justifyContent: "center",
       }}
     >
       <PassportCard passport={passport} />
-      <DiplomaticCard diplomatic={diplomatic} />
+      <VisaCard visa={visa} />
     </Box>
   );
 }
